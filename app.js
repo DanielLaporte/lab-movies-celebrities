@@ -12,9 +12,9 @@ const express = require('express');
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
-
+const mongoose = require("mongoose");
 const app = express();
-
+mongoose.set('strictQuery', true);
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 

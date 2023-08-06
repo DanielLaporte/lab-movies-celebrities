@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>All Movies</title>
+</head>
+<body>
+    <h1>All Movies</h1>
+    <ul>
+        {{#each movies}}
+            <li>
+                <h2>{{title}}</h2>
+                <p><strong>Genre:</strong> {{genre}}</p>
+                <p><strong>Plot:</strong> {{plot}}</p>
+                <p><strong>Cast:</strong>
+                    <ul>
+                        {{#each cast}}
+                            <li>{{this.name}} - {{this.occupation}}</li>
+                        {{/each}}
+                    </ul>
+                </p>
+                <a href="/movies/{{_id}}">View Details</a>
+            </li>
+        {{/each}}
+    </ul>
+    <a href="/movies/create">Add New Movie</a>
+</body>
+</html>
